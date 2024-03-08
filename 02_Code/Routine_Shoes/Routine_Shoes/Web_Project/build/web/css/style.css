@@ -1,0 +1,272 @@
+/*
+** Style Simple Ecommerce Theme for Bootstrap 4
+** Created by T-PHP https://t-php.fr/43-theme-ecommerce-bootstrap-4.html
+*/
+/*Header*/
+.header-top {
+    padding: 10px;
+    background-color: #db4533;
+}
+.bloc_left_price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+.category_block li:hover {
+    background-color: #007bff;
+}
+.category_block li:hover a {
+    color: #ffffff;
+}
+.category_block li a {
+    color: #343a40;
+}
+.add_to_cart_block .price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    margin-bottom: 0;
+}
+.add_to_cart_block .price_discounted {
+    color: #343a40;
+    text-align: center;
+    text-decoration: line-through;
+    font-size: 140%;
+}
+.product_rassurance {
+    padding: 10px;
+    margin-top: 15px;
+    background: #ffffff;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+}
+.product_rassurance .list-inline {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+.product_rassurance .list-inline li:hover {
+    color: #343a40;
+}
+.reviews_product .fa-star {
+    color: gold;
+}
+.pagination {
+    margin-top: 20px;
+}
+
+
+.bgc{
+    background-image: url(images/img1.jpg);
+    /*background-image: url("https://envato-shoebox-0.imgix.net/a553/ba21-ce80-45ee-82d4-120907cdb414/Clothes+and+shoes-74_banner.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=a9cc1545e602fe3d3e6c9faed39f0a84");*/
+}
+.show_txt{
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+a .active{
+    color: white;
+}
+
+
+
+
+  /* Carousel styling */
+      #introCarousel,
+      .carousel-inner,
+      .carousel-item,
+      .carousel-item.active {
+        height: 100vh;
+      }
+
+      .carousel-item:nth-child(1) {
+        background-image: url('../images/bn1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .carousel-item:nth-child(2) {
+        background-image: url('../images/bn2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .carousel-item:nth-child(3) {
+        background-image: url('../images/bn3.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+      .carousel-item:nth-child(4) {
+        background-image: url('../images/bn4.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+      .carousel-item:nth-child(5) {
+        background-image: url('../images/bn5.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+      .carousel-item:nth-child(6) {
+        background-image: url('../images/bn6.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #introCarousel {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: black !important;
+      }
+
+/* Footer */
+.box-footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f3f3;
+    border-top: 2px solid #EE2D14;
+    flex-direction: column;
+    margin-top: 80px;
+}
+.box-footer .wrap-footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 80px 0;
+}
+.box-footer .wrap-footer .logo-company {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 30%;
+}
+.box-footer .wrap-footer .logo-company a {
+    color: #282828;
+    display: inline-block;
+    height: auto;
+    width: 80%;
+}
+.box-footer .wrap-footer .list-footer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+    width: 100%;
+}
+.list-footer .menu-footer, .list-footer .support-footer, .list-footer .contact-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+}
+.list-footer .menu-footer a:first-child {
+    font-size: 24px;
+    font-weight: 600;
+    color: #282828;
+}
+.box-footer .list-footer a:hover {
+	color: #e01a22;
+}
+.list-footer .menu-footer a, .list-footer .support-footer a, .list-footer .contact-footer a {
+    color: #282828;
+    font-size: 16px;
+    font-weight: 300;
+}
+.list-footer .menu-footer>span, .list-footer .support-footer>span, .list-footer .contact-footer>span {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+.list-footer .contact-footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.list-footer .contact-footer a i {
+    font-size: 18px;
+    color: #e01a22;
+}
+.list-footer .contact-footer .contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+.list-footer .contact-footer .contact-icon a i {
+    font-size: 24px;
+    color: #333;
+    font-weight: 300;
+}
+.box-footer .copyright-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    background-color: #e01a22;
+    margin-bottom: 10px;
+}
+.box-footer .copyright-footer span {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+}
+/*Menu*/
+.nav-header {
+    background-color: cornsilk;
+}
+.nav-menu{
+    margin-top: 40px;
+    background: url(../images/home7_bg.png) repeat-x;
+    
+}
+.card-body-last{
+    background: blanchedalmond;
+    border-radius: 10px;
+}
+.card-header{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+.show_txt_last{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.col-left{
+    border-radius: 20px;
+}
+.title-last{
+    background: linear-gradient(90deg,#5be638, #b0e8a0 );
+	font-weight: 600;
+}
+.card{
+    margin-bottom: 12px;
+}
+
+
+
