@@ -53,11 +53,11 @@ public class SignUpControl extends HttpServlet {
             } else {
                 //day ve trang login.jsp
 
+<<<<<<< HEAD
                 request.setAttribute("error", "Đăng ký thất bại");
+=======
+                request.setAttribute("error", "Dang ki that bai");
                 request.getRequestDispatcher("SignUp.jsp").forward(request, response);
-            }
-        }
-        //sign up
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

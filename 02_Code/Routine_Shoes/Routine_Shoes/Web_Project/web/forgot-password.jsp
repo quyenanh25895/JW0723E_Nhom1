@@ -42,7 +42,7 @@ src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <input name="username" type="text" id="username" class="form-control" placeholder="Username" required="" autofocus="">
                 <label for="email">Email</label>
                 <input name="email" type="text" id="email" class="form-control" placeholder="Email" required="" autofocus="">
-                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Retrieve</button> 
+                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i>Retrieve</button> 
             </form>
 
         </div>

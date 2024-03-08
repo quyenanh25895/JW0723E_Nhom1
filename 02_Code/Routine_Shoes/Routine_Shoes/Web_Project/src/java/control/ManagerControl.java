@@ -63,10 +63,6 @@ public class ManagerControl extends HttpServlet {
         request.setAttribute("endPage", endPage);
         request.setAttribute("listCC", listC);
         request.setAttribute("listP", list);
-   //     request.getRequestDispatcher("ManagerProduct.jsp").forward(request, response);
-        request.getRequestDispatcher("QuanLySanPham.jsp").forward(request, response);
-    }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

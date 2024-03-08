@@ -59,11 +59,11 @@ public class AddCartControl extends HttpServlet {
         }
         else {
         	  dao.insertCart(accountID, productID, amount, size);
+<<<<<<< HEAD
         	  request.setAttribute("mess", "Đã thêm sản phẩm vào giỏ hàng!");
+=======
+        	  request.setAttribute("mess", "Da them san pham vao gio hang!");
         	  request.getRequestDispatcher("managerCart").forward(request, response);
-        }
-      
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

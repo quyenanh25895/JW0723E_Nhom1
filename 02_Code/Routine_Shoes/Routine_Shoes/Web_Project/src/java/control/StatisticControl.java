@@ -38,7 +38,6 @@ public class StatisticControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
         int uID;
@@ -61,7 +60,6 @@ public class StatisticControl extends HttpServlet {
         double totalMoney5 = dao.totalMoneyDay(5);
         double totalMoney6 = dao.totalMoneyDay(6);
         double totalMoney7 = dao.totalMoneyDay(7);
-
         double totalMoneyMonth1 = dao.totalMoneyMonth(1);
         double totalMoneyMonth2 = dao.totalMoneyMonth(2);
         double totalMoneyMonth3 = dao.totalMoneyMonth(3);
@@ -96,7 +94,6 @@ public class StatisticControl extends HttpServlet {
         request.setAttribute("totalMoney5", totalMoney5);
         request.setAttribute("totalMoney6", totalMoney6);
         request.setAttribute("totalMoney7", totalMoney7);
-
         request.setAttribute("totalMoneyMonth1", totalMoneyMonth1);
         request.setAttribute("totalMoneyMonth2", totalMoneyMonth2);
         request.setAttribute("totalMoneyMonth3", totalMoneyMonth3);

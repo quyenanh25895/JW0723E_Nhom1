@@ -42,6 +42,7 @@ public class EditProfileControl extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
+<<<<<<< HEAD
         String passwordMH = MaHoa.toSHA1(password);
         DAO dao = new DAO();
 
@@ -50,6 +51,15 @@ public class EditProfileControl extends HttpServlet {
         request.setAttribute("mess", "Cập nhật tài khoản thành công! Vui lòng đăng nhập lại");
 
         request.getRequestDispatcher("logout").forward(request, response);
+=======
+        DAO dao = new DAO();
+
+        dao.editProfile(username, password, email, id);
+        
+        request.setAttribute("mess", "Cap nhat tai khoan thanh cong! Hay dang nhap bang tai khoan moi!");
+
+        request.getRequestDispatcher("Login.jsp").forward(request, response);
+>>>>>>> 88201320392470e9f17c3cda012fc18851b80297
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

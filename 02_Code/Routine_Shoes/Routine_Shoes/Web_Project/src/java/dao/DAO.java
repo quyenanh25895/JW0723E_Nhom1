@@ -34,7 +34,7 @@ public class DAO {
         List<Product> list = new ArrayList<>();
         String query = "select * from Product";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -63,13 +63,12 @@ public class DAO {
                 + "ORDER BY soLuongDaBan DESC\n"
                 + "LIMIT 10;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new SoLuongDaBan(rs.getInt(1),
-                        rs.getInt(2)
-                ));
+                        rs.getInt(2)));
             }
         } catch (Exception e) {
         }
@@ -80,15 +79,14 @@ public class DAO {
         List<Invoice> list = new ArrayList<>();
         String query = "select * from Invoice";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new Invoice(rs.getInt(1),
                         rs.getInt(2),
                         rs.getDouble(3),
-                        rs.getDate(4)
-                ));
+                        rs.getDate(4)));
             }
         } catch (Exception e) {
         }
@@ -98,7 +96,7 @@ public class DAO {
     public int countAllProductBySellID(int sell_ID) {
         String query = "select count(*) from Product where sell_ID=?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, sell_ID);
             rs = ps.executeQuery();
@@ -115,7 +113,7 @@ public class DAO {
                 + "FROM Product\n"
                 + "WHERE `id` = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, productID);
             rs = ps.executeQuery();
@@ -137,7 +135,7 @@ public class DAO {
                 + "GROUP BY\n"
                 + "    ngayXuat;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, day);
             rs = ps.executeQuery();
@@ -154,7 +152,7 @@ public class DAO {
                 + "where MONTH(ngayXuat)=?\r\n"
                 + "Group by MONTH(ngayXuat)";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, month);
             rs = ps.executeQuery();
@@ -169,7 +167,7 @@ public class DAO {
     public int countAllProduct() {
         String query = "select count(*) from Product";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -183,7 +181,7 @@ public class DAO {
     public double sumAllInvoice() {
         String query = "select SUM(tongGia) from Invoice";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -197,7 +195,7 @@ public class DAO {
     public int countAllReview() {
         String query = "select count(*) from Review";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -216,7 +214,7 @@ public class DAO {
                 + "WHERE\n"
                 + "    `id` = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, id);
             rs = ps.executeQuery();
@@ -232,7 +230,7 @@ public class DAO {
         List<Account> list = new ArrayList<>();
         String query = "select * from Account";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -252,7 +250,7 @@ public class DAO {
         List<Supplier> list = new ArrayList<>();
         String query = "select * from Supplier";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -275,14 +273,13 @@ public class DAO {
                 + "ORDER BY TongChiTieu DESC\n"
                 + "LIMIT 5;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new TongChiTieuBanHang(rs.getInt(1),
                         rs.getDouble(2),
-                        rs.getDouble(3)
-                ));
+                        rs.getDouble(3)));
             }
         } catch (Exception e) {
         }
@@ -296,14 +293,13 @@ public class DAO {
                 + "ORDER BY TongBanHang DESC\n"
                 + "LIMIT 5;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new TongChiTieuBanHang(rs.getInt(1),
                         rs.getDouble(2),
-                        rs.getDouble(3)
-                ));
+                        rs.getDouble(3)));
             }
         } catch (Exception e) {
         }
@@ -316,7 +312,7 @@ public class DAO {
                 + "FROM Product\n"
                 + "LIMIT 3;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -345,7 +341,7 @@ public class DAO {
                 + "ORDER BY id\n"
                 + "LIMIT 3 OFFSET ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, amount);
             rs = ps.executeQuery();
@@ -376,7 +372,7 @@ public class DAO {
                 + "ORDER BY id DESC\n"
                 + "LIMIT 4 OFFSET ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, amount);
             rs = ps.executeQuery();
@@ -407,7 +403,7 @@ public class DAO {
                 + "ORDER BY id DESC\n"
                 + "LIMIT 4 OFFSET ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, amount);
             rs = ps.executeQuery();
@@ -435,7 +431,7 @@ public class DAO {
         String query = "select * from Product\n"
                 + "where cateID = ?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, cid);
             rs = ps.executeQuery();
@@ -466,7 +462,7 @@ public class DAO {
                 + "ORDER BY id\n"
                 + "LIMIT 5 OFFSET ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, id);
             ps.setInt(2, (indexPage - 1) * 5);
@@ -497,7 +493,7 @@ public class DAO {
                 + "ORDER BY id\n"
                 + "LIMIT 9 OFFSET ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, (indexPage - 1) * 9);
             rs = ps.executeQuery();
@@ -526,7 +522,7 @@ public class DAO {
                 + "FROM Product\n"
                 + "WHERE `name` LIKE ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, "%" + txtSearch + "%");
             rs = ps.executeQuery();
@@ -553,15 +549,14 @@ public class DAO {
         List<Invoice> list = new ArrayList<>();
         String query = "SELECT * FROM invoice ORDER BY ngayXuat ASC;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
-            while (rs.next()) {        
+            while (rs.next()) {
                 list.add(new Invoice(rs.getInt(1),
                         rs.getInt(2),
                         rs.getDouble(3),
-                        rs.getDate(4)
-                ));
+                        rs.getDate(4)));
             }
         } catch (Exception e) {
         }
@@ -574,7 +569,7 @@ public class DAO {
                 + "FROM Product\n"
                 + "WHERE price < 100;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -602,7 +597,7 @@ public class DAO {
                 + "FROM Product\n"
                 + "WHERE price >= 100 AND price <= 200;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -630,7 +625,7 @@ public class DAO {
                 + "FROM Product\n"
                 + "WHERE color = 'White';";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -658,7 +653,7 @@ public class DAO {
                 + "FROM Product\n"
                 + "WHERE color = 'Gray';";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -686,7 +681,7 @@ public class DAO {
                 + "FROM Product\n"
                 + "WHERE color = 'Black';";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -714,7 +709,7 @@ public class DAO {
                 + "FROM Product\n"
                 + "WHERE color = 'Yellow';";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -742,7 +737,7 @@ public class DAO {
                 + "FROM Product\n"
                 + "WHERE price >= ? AND price <= ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, priceMin);
             ps.setString(2, priceMax);
@@ -772,7 +767,7 @@ public class DAO {
                 + "FROM Product\n"
                 + "WHERE price > 200;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -802,7 +797,7 @@ public class DAO {
                 + "ORDER BY id DESC\n"
                 + "LIMIT 4;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, cateIDProductDetail);
             rs = ps.executeQuery();
@@ -831,7 +826,7 @@ public class DAO {
                 + "FROM Review\n"
                 + "WHERE productID = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, productId);
             rs = ps.executeQuery();
@@ -839,8 +834,7 @@ public class DAO {
                 list.add(new Review(rs.getInt(1),
                         rs.getInt(2),
                         rs.getString(3),
-                        rs.getDate(4)
-                ));
+                        rs.getDate(4)));
             }
         } catch (Exception e) {
         }
@@ -851,7 +845,7 @@ public class DAO {
         String query = "select * from Product\n"
                 + "where id = ?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, id);
             rs = ps.executeQuery();
@@ -878,7 +872,7 @@ public class DAO {
         List<Cart> list = new ArrayList<>();
         String query = "select * from Cart where accountID = ?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, accountID);
             rs = ps.executeQuery();
@@ -900,7 +894,7 @@ public class DAO {
                 + "FROM Cart\n"
                 + "WHERE accountID = ? AND productID = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, accountID);
             ps.setInt(2, productID);
@@ -923,7 +917,7 @@ public class DAO {
                 + "FROM Account\n"
                 + "WHERE uID = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, userID);
 
@@ -943,16 +937,14 @@ public class DAO {
                 + "FROM TongChiTieuBanHang\n"
                 + "WHERE userID = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, userID);
-
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new TongChiTieuBanHang(rs.getInt(1),
                         rs.getDouble(2),
-                        rs.getDouble(3)
-                );
+                        rs.getDouble(3));
             }
         } catch (Exception e) {
         }
@@ -963,15 +955,13 @@ public class DAO {
 
         String query = "select * from SoLuongDaBan where productID = ?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, productID);
-
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new SoLuongDaBan(rs.getInt(1),
-                        rs.getInt(2)
-                );
+                        rs.getInt(2));
             }
         } catch (Exception e) {
         }
@@ -982,7 +972,7 @@ public class DAO {
         List<Category> list = new ArrayList<>();
         String query = "select * from Category";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -994,11 +984,11 @@ public class DAO {
         return list;
     }
 
-//
+    //
     public Product getLast() {
         String query = "SELECT * FROM Product ORDER BY id DESC LIMIT 1";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -1024,7 +1014,7 @@ public class DAO {
         List<Product> list = new ArrayList<>();
         String query = "select top 8 * from Product order by id desc";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -1052,7 +1042,7 @@ public class DAO {
                 + "where cateID = 2\r\n"
                 + "order by id desc";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -1080,7 +1070,7 @@ public class DAO {
                 + "where cateID = 1\r\n"
                 + "order by id desc";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -1107,7 +1097,7 @@ public class DAO {
                 + "WHERE user = ? AND pass = ?;";
 
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, user);
             ps.setString(2, pass);
@@ -1129,7 +1119,7 @@ public class DAO {
         String query = "SELECT * FROM Account\n"
                 + "WHERE `user` = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, user);
             rs = ps.executeQuery();
@@ -1150,7 +1140,7 @@ public class DAO {
         String query = "SELECT * FROM Account\n"
                 + "WHERE `user` = ? AND `email` = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, username);
             ps.setString(2, email);
@@ -1173,7 +1163,7 @@ public class DAO {
                 + "where accountID = ? and productID = ?\r\n"
                 + "order by maReview desc";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, accountID);
             ps.setInt(2, productID);
@@ -1193,7 +1183,7 @@ public class DAO {
         String query = "INSERT INTO Account (`user`, `pass`, `isSell`, `isAdmin`, `email`)\n"
                 + "VALUES (?, ?, 0, 0, ?);";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, user);
             ps.setString(2, pass);
@@ -1207,7 +1197,7 @@ public class DAO {
         String query = "DELETE FROM Invoice\n"
                 + "WHERE `accountID` = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, id);
             ps.executeUpdate();
@@ -1219,7 +1209,7 @@ public class DAO {
         String query = "DELETE FROM TongChiTieuBanHang\n"
                 + "WHERE `userID` = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, id);
             ps.executeUpdate();
@@ -1231,7 +1221,7 @@ public class DAO {
         String query = "DELETE FROM Product\n"
                 + "WHERE `id` = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, pid);
             ps.executeUpdate();
@@ -1243,7 +1233,7 @@ public class DAO {
         String query = "DELETE FROM Product\n"
                 + "WHERE `sell_ID` = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, id);
             ps.executeUpdate();
@@ -1255,43 +1245,27 @@ public class DAO {
         String query = "DELETE FROM Cart\n"
                 + "WHERE accountID = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            ps.setInt(1, accountID);
-            ps.executeUpdate();
-        } catch (Exception e) {
-        }
     }
 
     public void deleteCartByProductID(String productID) {
         String query = "DELETE FROM Cart\n"
                 + "WHERE productID = ?;";
-        try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            ps.setString(1, productID);
-            ps.executeUpdate();
-        } catch (Exception e) {
-        }
+    }
+
     }
 
     public void deleteSoLuongDaBanByProductID(String productID) {
         String query = "DELETE FROM SoLuongDaBan\n"
                 + "WHERE productID = ?;";
-        try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            ps.setString(1, productID);
-            ps.executeUpdate();
-        } catch (Exception e) {
-        }
+    }
+
     }
 
     public void deleteReviewByProductID(String productID) {
         String query = "DELETE FROM Review\n"
                 + "WHERE productID = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, productID);
             ps.executeUpdate();
@@ -1303,7 +1277,7 @@ public class DAO {
         String query = "DELETE FROM Review\n"
                 + "WHERE accountID = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, id);
             ps.executeUpdate();
@@ -1314,7 +1288,7 @@ public class DAO {
     public void deleteAccount(String id) {
         String query = "delete from Account where uID= ?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, id);
             ps.executeUpdate();
@@ -1326,7 +1300,7 @@ public class DAO {
         String query = "delete from Supplier\r\n"
                 + "where idSupplier=?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, idSupplier);
             ps.executeUpdate();
@@ -1337,7 +1311,7 @@ public class DAO {
     public void deleteCart(int productID) {
         String query = "delete from Cart where productID = ?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, productID);
             ps.executeUpdate();
@@ -1346,19 +1320,20 @@ public class DAO {
     }
 
     public void insertProduct(String name, String image, String price,
-            String title, String description, String category, int sid, String model, String color, String delivery, String image2, String image3, String image4) {
+            String title, String description, String category, int sid, String model, String color, String delivery,
+            String image2, String image3, String image4) {
         String query = "INSERT INTO Product (`name`, `image`, `price`, `title`, `description`, `cateID`, `sell_ID`, `model`, `color`, `delivery`, `image2`, `image3`, `image4`)\n"
                 + "VALUES (N'\"+name+\"', '\"+image+\"', '\"+price+\"', N'\"+title+\"', N'\"+description+\"', '\"+category+\"', '\"+sid+\"', N'\"+model+\"', N'\"+color+\"', N'\"+delivery+\"', '\"+image2+\"', '\"+image3+\"', '\"+image4+\"');";
         try {
 
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             /*
-			 * ps.setString(1, name); ps.setString(2, image); ps.setString(3, price);
-			 * ps.setString(4, title); ps.setString(5, description); ps.setString(6,
-			 * category); ps.setInt(7, sid); ps.setString(8, model); ps.setString(9, color);
-			 * ps.setString(10, delivery); ps.setString(11, image2); ps.setString(12,
-			 * image3); ps.setString(13, image4);
+             * ps.setString(1, name); ps.setString(2, image); ps.setString(3, price);
+             * ps.setString(4, title); ps.setString(5, description); ps.setString(6,
+             * category); ps.setInt(7, sid); ps.setString(8, model); ps.setString(9, color);
+             * ps.setString(10, delivery); ps.setString(11, image2); ps.setString(12,
+             * image3); ps.setString(13, image4);
              */
             ps.executeUpdate();
 
@@ -1372,7 +1347,7 @@ public class DAO {
         String query = "INSERT INTO Account (`user`, `pass`, `isSell`, `isAdmin`, `email`)\n"
                 + "VALUES (?, ?, ?, ?, ?);";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, user);
             ps.setString(2, pass);
@@ -1388,12 +1363,11 @@ public class DAO {
         String query = "insert TongChiTieuBanHang(userID,TongChiTieu,TongBanHang)\r\n"
                 + "values(?,?,?)";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, userID);
             ps.setDouble(2, tongChiTieu);
             ps.setDouble(3, tongBanHang);
-
             ps.executeUpdate();
         } catch (Exception e) {
         }
@@ -1407,15 +1381,17 @@ public class DAO {
             ps = conn.prepareStatement(query);
             ps.setInt(1, productID);
             ps.setInt(2, soLuongDaBan);
-
             ps.executeUpdate();
         } catch (Exception e) {
-        }
     }
+        String query = "insert Supplier(nameSupplier, phoneSupplier, emailSupplier, addressSupplier, cateID) \r\n"
+                + "values(?,?,?,?,?)";
+=======
 
     public void insertSupplier(String nameSupplier, String phoneSupplier, String emailSupplier, String addressSupplier, String cateID) {
         String query = "insert Supplier(nameSupplier, phoneSupplier, emailSupplier, addressSupplier, cateID) \r\n"
-                + "values(?,?,?,?,?)";
+        		+ "values(?,?,?,?,?)";
+>>>>>>> 88201320392470e9f17c3cda012fc18851b80297
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -1439,7 +1415,7 @@ public class DAO {
                 + "values(?,?,?,?)";
 
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, accountID);
             ps.setInt(2, productID);
@@ -1456,7 +1432,7 @@ public class DAO {
                 + "values(?,?,?)";
 
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, accountID);
             ps.setDouble(2, tongGia);
@@ -1472,7 +1448,7 @@ public class DAO {
         String query = "insert Cart(accountID, productID, amount,size)\r\n"
                 + "values(?,?,?,?)";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, accountID);
             ps.setInt(2, productID);
@@ -1483,7 +1459,8 @@ public class DAO {
         }
     }
 
-    public void editProduct(String pname, String pimage, String pprice, String ptitle, String pdescription, String pcategory,
+    public void editProduct(String pname, String pimage, String pprice, String ptitle, String pdescription,
+            String pcategory,
             String pmodel, String pcolor,
             String pdelivery, String pimage2, String pimage3, String pimage4, String pid) {
         String query = "UPDATE Product\n"
@@ -1502,7 +1479,7 @@ public class DAO {
                 + "  image4 = ?\n"
                 + "WHERE id = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, pname);
             ps.setString(2, pimage);
@@ -1532,7 +1509,7 @@ public class DAO {
                 + "  email = ?\n"
                 + "WHERE uID = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, username);
             ps.setString(2, password);
@@ -1549,7 +1526,7 @@ public class DAO {
                 + "WHERE uID = ?;\n";
 
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, newPassword);
             ps.setInt(2, uID);
@@ -1561,7 +1538,7 @@ public class DAO {
     public void editTongChiTieu(int accountID, double totalMoneyVAT) {
         String query = "exec dbo.proc_CapNhatTongChiTieu ?,?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, accountID);
             ps.setDouble(2, totalMoneyVAT);
@@ -1576,7 +1553,7 @@ public class DAO {
     public void editSoLuongDaBan(int productID, int soLuongBanThem) {
         String query = "exec dbo.proc_CapNhatSoLuongDaBan ?,?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, productID);
             ps.setInt(2, soLuongBanThem);
@@ -1591,7 +1568,7 @@ public class DAO {
     public void editTongBanHang(int sell_ID, double tongTienBanHangThem) {
         String query = "exec dbo.proc_CapNhatTongBanHang ?,?";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, sell_ID);
             ps.setDouble(2, tongTienBanHangThem);
@@ -1610,7 +1587,7 @@ public class DAO {
                 + "  size = ?\n"
                 + "WHERE accountID = ? AND productID = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, amount);
             ps.setString(2, size);
@@ -1627,7 +1604,7 @@ public class DAO {
                 + "  amount = ?\n"
                 + "WHERE accountID = ? AND productID = ?;";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();// mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setInt(1, amount);
             ps.setInt(2, accountID);
@@ -1635,32 +1612,6 @@ public class DAO {
             ps.executeUpdate();
         } catch (Exception e) {
         }
-    }
-
-    public static void main(String[] args) {
-        DAO dao = new DAO();
-//       List<Review> list = 
-//        	dao.insertProduct("Giày Bóng Đá Nam Bitis Hunter Football","https://product.hstatic.net/1000230642/product/02400vag__1__5d559f914caf4864ad99a37c18cc1a1b_1024x1024.jpg",
-//        					"535","Giày Bóng Đá Nam Biti Hunter Football","Với thiết kế năng động, Giày bóng đá Biti’s Hunter được tung ra với 5 màu sắc nổi bật tạo điểm nhấn trên sân đấu.",
-//        					"3",1,"G39","Yellow","Ho Chi Minh","https://product.hstatic.net/1000230642/product/02400vag__3__3a83e45335054285a27fba37cafb23c1_1024x1024.jpg",
-//        					"https://product.hstatic.net/1000230642/product/02400vag__4__d3693ef3babe4fc3a2908d8eb2df6e3b_1024x1024.jpg","https://product.hstatic.net/1000230642/product/02400vag__4__d3693ef3babe4fc3a2908d8eb2df6e3b_1024x1024.jpg");
-//        dao.editProduct("Giay chay du lich 2","https://giaygiare.vn/upload/sanpham/nike-sb-dunk-low-eire-net-deep-orange.jpg","301","title 3",
-//       		"desciption desciption 3", "1", "G66", "Blue", "Ho Chi Minh", "https://giaygiare.vn/upload/sanpham/nike-sb-dunk-low-eire-net-deep-orange.jpg",
-//       		"https://giaygiare.vn/upload/sanpham/nike-sb-dunk-low-eire-net-deep-orange.jpg",
-//        		"https://giaygiare.vn/upload/sanpham/nike-sb-dunk-low-eire-net-deep-orange.jpg", "3");
-
-//        List<Invoice> list = dao.searchByNgayXuat("2021-11-20");
-//        for (Invoice o : list) 
-//        { 
-//        	System.out.println(o); 
-//        }
-//      int s = dao.checkAccountAdmin(1);
-//      System.out.println(s);
-//      System.out.println("da chay xong");
-
-        /*
-		 * for (Review o : list) { System.out.println(o); }
-         */
     }
 
 }
